@@ -27,7 +27,7 @@ function getIntervalArray(start, end) {
 }
 
 /**
- * Returns a new array where each element is the sum of the corresponding elements
+ * Returns a  of the corresponding elements
  * from two arrays. Arrays can have different lengths.
  *
  * @param {array} arr1 - The first array.
@@ -39,8 +39,11 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1.map((item, i) => item + (arr2[i] || 0));
+  }
+  return arr2.map((item, i) => item + (arr1[i] || 0));
 }
 
 /**
